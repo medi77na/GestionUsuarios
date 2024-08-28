@@ -1,12 +1,22 @@
-﻿namespace GestionUsuarios.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace GestionUsuarios.Data;
+
+[Table("usuarios")]
 public partial class Usuario
 {
-    public int Id { get; set; }
+    [Key]
+    [Column("id")]
+    public required int Id { get; set; }
 
-    public string Nombre { get; set; } = null!;
+    [Column("nombre")]
+    [MaxLength(45, ErrorMessage = "El campo nombre no debe estar vacío.")]
+    public required string Nombre { get; set; }
 
-    public string Apellido { get; set; } = null!;
+    [Column("apellido")]
+    [MaxLength(45, ErrorMessage = "El campo apellido no debe estar vacío.")]
+    public required string Apellido { get; set; }
 
-    public DateOnly FechaNacimiento { get; set; }
+    public required DateOnly FechaNacimiento { get; set; }
 }

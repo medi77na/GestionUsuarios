@@ -2,22 +2,22 @@
 
 namespace GestionUsuarios.Data;
 
-public partial class Bx620q7fvosj8mz5q4ygContext : DbContext
+public partial class ApplicationDBContext : DbContext
 {
-    public Bx620q7fvosj8mz5q4ygContext()
+    public ApplicationDBContext()
     {
     }
 
-    public Bx620q7fvosj8mz5q4ygContext(DbContextOptions<Bx620q7fvosj8mz5q4ygContext> options)
+    public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
         : base(options)
     {
     }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=bx620q7fvosj8mz5q4yg-mysql.services.clever-cloud.com;port=3306;database=bx620q7fvosj8mz5q4yg;user=uygmpftpmrbimy9j;password=BBkLZkzXjjDyTs5zvoy3", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.15-mysql"));
+//     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+//         => optionsBuilder.UseMySql("server=bx620q7fvosj8mz5q4yg-mysql.services.clever-cloud.com;port=3306;database=bx620q7fvosj8mz5q4yg;user=uygmpftpmrbimy9j;password=BBkLZkzXjjDyTs5zvoy3", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.15-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
