@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GestionUsuarios.Data;
+namespace GestionUsuarios.Models;
 
 [Table("usuarios")]
 public partial class Usuario
@@ -18,5 +18,6 @@ public partial class Usuario
     [MaxLength(45, ErrorMessage = "El campo apellido no debe estar vacío.")]
     public required string Apellido { get; set; }
 
+    [Column("fecha_nacimiento")]
     public required DateOnly FechaNacimiento { get; set; }
 }

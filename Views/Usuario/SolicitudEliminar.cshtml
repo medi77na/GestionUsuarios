@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Eliminar Page";
+}
+
+<div class="container my-4">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Fecha de nacimiento</th>
+                <th scope="col">Opción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <th scope="row">@usuario.Id</th>
+                    <td>@usuario.Nombre</td>
+                    <td>@usuario.Apellido</td>
+                    <td>@usuario.FechaNacimiento</td>
+                    <td><a asp-action="Eliminar" asp-route-id="@usuario.Id" class="btn btn-outline-danger btn-sm px-4">Eliminar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
